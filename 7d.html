@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>My College - Student Details</title>
+ <script>
+ // User-defined object constructor for Student
+ function Student(name, branch, marks, totalMarks) {
+ this.name = name;
+ // Generate a random user ID using Math.random() and Math.floor()
+ this.id = "A" + Math.floor(Math.random() * 1000);
+ this.branch = branch;
+ this.marks = marks;
+ this.totalMarks = totalMarks;
+ // Calculate percentage and round it using Math.round()
+this.percentage = Math.round((this.marks / this.totalMarks) * 100);
+ // Method to display student details
+ this.displayDetails = function () {
+ // Create a div element to hold the student details
+ var studentDiv = document.createElement('div');
+ studentDiv.innerHTML =
+ '<h2>Student Details</h2>' +
+ '<p><strong>Name:</strong> ' + this.name + '</p>' +
+ '<p><strong>ID:</strong> ' + this.id + '</p>' +
+ '<p><strong>Branch:</strong> ' + this.branch + '</p>' +
+ '<p><strong>Marks:</strong> ' + this.marks + ' out of ' + this.totalMarks + '</p>' +
+ '<p><strong>Percentage:</strong> ' + this.percentage + '%</p>';
+ // Append the div to the body
+ document.body.appendChild(studentDiv);
+ };
+ }
+window.onload = function () {
+ // Create a header element
+ var header = document.createElement('h1');
+ header.textContent = 'My College - Student Details';
+ document.body.appendChild(header);
+ // Create an instance of the Student object
+ var student1 = new Student("Arjun", "Computer Science", 432, 500);
+ // Display the student's details
+ student1.displayDetails();
+ // Additional information regarding Math usage
+ var infoPara = document.createElement('p');
+ infoPara.textContent =
+ 'Student details include a randomly generated ID and a rounded percentage computed 
+using Math methods.';
+ document.body.appendChild(infoPara);
+ };
+ </script>
+</head>
+<body>
+</body>
+</html>
