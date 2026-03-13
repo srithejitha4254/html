@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Armstrong Number Checker</title>
+<script type="text/javascript">
+        function isArmstrong(event) {
+        // Prevent form submission from reloading the page
+        event.preventDefault();
+        // Get the input value and parse it as an integer
+        var num = parseInt(document.getElementById("number").value, 10);
+        var originalNum = num; // Save the original number for comparison
+        var sum = 0;
+        // Compute the sum of the cubes of each digit
+        while (num > 0) {
+        var digit = num % 10;
+        sum += digit * digit * digit; // Alternatively, Math.pow(digit, 3)
+        num = Math.floor(num / 10);
+        }
+        // Compare the sum with the original number
+        var output = "";
+        if (sum === originalNum) {
+        output = originalNum + " is an Armstrong number.";
+        } else {
+        output = originalNum + " is not an Armstrong number.";
+        }
+        // Display the result in the designated div
+        document.getElementById("result").innerText = output;
+        }
+        </script>
+        </head>
+        <body>
+        <h1>Armstrong Number Checker</h1>
+        <form onsubmit="isArmstrong(event)">
+        <label for="number">Enter a number:</label>
+        <input type="number" id="number" required>
+        <button type="submit">Check</button>++  
+        </form>
+        <div id="result" style="margin-top:20px; font-size:1.2em;"></div>
+</body>
+</html>
