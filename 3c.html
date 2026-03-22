@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>CSS Styling Demonstration</title>
+ <!-- Linking External CSS -->
+ <link rel="stylesheet" href="styles.css">
+ <!-- Internal CSS -->
+ <style>
+ /* Internal CSS */
+ header {
+ background-color: #333;
+ color: white;
+ text-align: center;
+ padding: 10px;
+ }
+ footer {
+ background-color: #007BFF;
+ color: white;
+ text-align: center;
+ padding: 10px;
+ margin-top: 20px;
+ }
+ p.note {
+ color: #008800;
+ }
+ </style>
+</head>
+<body>
+ <!-- Inline CSS -->
+ <header>
+ <h1 style="font-size: 2.5rem; font-weight: bold;">CSS Styling Demo</h1>
+ </header>
+ <div>
+ <h2>Inline CSS Example</h2>
+ <p style="color: red; font-weight: bold;">
+This paragraph is styled using inline CSS. Inline styles are defined directly in the HTML
+tag.
+ </p>
+ </div>
+ <div>
+ <h2>Internal CSS Example</h2>
+ <p class="note">
+ This paragraph is styled using internal CSS. Internal styles are defined in the
+&lt;style&gt; block within the &lt;head&gt; section.
+ </p>
+ </div>
+ <div>
+ <h2>External CSS Example</h2>
+ <p class="abcd">
+ This paragraph is styled using external CSS. External styles are defined in a separate CSS
+file and linked using the &lt;link&gt; tag.
+ </p>
+ </div>
+ <footer>
+ <p>&copy; 2024 CSS Styling Demo</p>
+ </footer>
+</body>
+</html>
+styles.css
+/* External CSS */
+body {
+ font-family: Arial, sans-serif;
+ margin: 20px;
+ line-height: 1.6;
+ background-color: #f9f9f9;
+}
+h1 {
+ color: #007BFF;
+ text-align: center;
+}
+p {
+ color: #333;
+ font-size: 1rem;
+}
+p.abcd {
+ color: blue;
+}
+div {
+ border: 1px solid #ddd;
+padding: 10px;
+ background-color: #fff;
+ margin-bottom:10px;
+ }
