@@ -1,0 +1,82 @@
+CODE: 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>My College - Student Details</title> 
+  <script> 
+    // User-defined object constructor for Student 
+    function Student(name, branch, dob, joinYear) { 
+      this.name = name; 
+      // Generate a random user id using Math.random() and Math.floor() 
+      this.id = "A" + Math.floor(Math.random() * 1000);
+  this.branch = branch; 
+      // Store date of birth (as a Date object) and the year of joining 
+      this.dob = new Date(dob); // dob should be in a format like "1999-03-15" 
+      this.joinYear = joinYear; 
+      // Calculate the age using the Date object 
+      var today = new Date(); 
+      var age = today.getFullYear() - this.dob.getFullYear(); 
+      var m = today.getMonth() - this.dob.getMonth(); 
+      if (m < 0 || (m === 0 && today.getDate() < this.dob.getDate())) { 
+          age--; 
+      } 
+      this.age = age; 
+      // Method to display student details using document methods 
+      this.displayDetails = function() { 
+        var studentDiv = document.createElement('div'); 
+        studentDiv.innerHTML = '<h2>Student Details</h2>' + 
+                               '<p><strong>Name:</strong> ' + this.name + '</p>' + 
+                               '<p><strong>ID:</strong> ' + this.id + '</p>' + 
+                               '<p><strong>Branch:</strong> ' + this.branch + '</p>' + 
+                               '<p><strong>Date of Birth:</strong> ' + this.dob.toDateString() + '</p>' + 
+                               '<p><strong>Age:</strong> ' + this.age + '</p>' + 
+                               '<p><strong>Year of Joining:</strong> ' + this.joinYear + '</p>'; 
+        document.body.appendChild(studentDiv); 
+      } 
+    } 
+    // Run code after the document is fully loaded 
+    window.onload = function() { 
+      // Create a header element using document methods 
+      var header = document.createElement('h1'); 
+      header.textContent = 'My College - Student Details'; 
+      document.body.appendChild(header); 
+      // Create an instance of the Student object with a date of birth and year of joining 
+      var student1 = new Student("Arjun Kumar", "Computer Science", "1999-03-15", 2018); 
+      student1.displayDetails(); 
+      // --------- Date Object Properties and Methods Demonstration --------- 
+      var dateHeader = document.createElement('h2'); 
+      dateHeader.textContent = 'Date Object Properties and Methods'; 
+      document.body.appendChild(dateHeader); 
+      // Create a Date object for the current date and time 
+      var currentDate = new Date(); 
+      // Display the current date and time using toLocaleString() 
+      var currentDatePara = document.createElement('p'); 
+      currentDatePara.textContent = 'Current Date and Time: ' + currentDate.toLocaleString(); 
+      document.body.appendChild(currentDatePara); 
+      // Display individual properties of the current date 
+      var currentYearPara = document.createElement('p'); 
+      currentYearPara.textContent = 'Current Year: ' + currentDate.getFullYear(); 
+      document.body.appendChild(currentYearPara); 
+      var currentMonthPara = document.createElement('p'); 
+      // getMonth() returns month index (0-11), add 1 for human-readable format 
+      currentMonthPara.textContent = 'Current Month: ' + (currentDate.getMonth() + 1); 
+      document.body.appendChild(currentMonthPara); 
+      var currentDayPara = document.createElement('p'); 
+      currentDayPara.textContent = 'Current Day: ' + currentDate.getDate(); 
+      document.body.appendChild(currentDayPara); 
+      var currentHoursPara = document.createElement('p'); 
+      currentHoursPara.textContent = 'Current Hour: ' + currentDate.getHours(); 
+      document.body.appendChild(currentHoursPara); 
+      var currentMinutesPara = document.createElement('p'); 
+      currentMinutesPara.textContent = 'Current Minutes: ' + currentDate.getMinutes(); 
+      document.body.appendChild(currentMinutesPara); 
+      var currentSecondsPara = document.createElement('p'); 
+      currentSecondsPara.textContent = 'Current Seconds: ' + currentDate.getSeconds(); 
+       document.body.appendChild(currentSecondsPara); 
+    } 
+  </script> 
+</head> 
+<body> 
+</body> 
+</html> 
